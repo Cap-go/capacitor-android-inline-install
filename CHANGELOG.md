@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.4.0](https://github.com/cap-go/capacitor-android-inline-install/compare/7.3.0...7.4.0) (2025-09-18)
+
+
+### Features
+
+* reorganize build steps in GitHub Actions workflow for clarity ([d4a486a](https://github.com/cap-go/capacitor-android-inline-install/commit/d4a486abfa6b0a287db519808f75b900ada06e63))
+
 ## [7.3.0](https://github.com/cap-go/capacitor-android-inline-install/compare/7.2.0...7.3.0) (2025-09-18)
 
 
