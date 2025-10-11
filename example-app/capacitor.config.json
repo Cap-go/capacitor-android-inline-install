@@ -1,6 +1,6 @@
 {
   "appId": "app.capgo.android.inline.install",
-  "appName": "@capgo/capacitor-android-inline-install example",
+  "appName": "Android Inline Install Example",
   "webDir": "dist",
   "plugins": {
     "SplashScreen": {
