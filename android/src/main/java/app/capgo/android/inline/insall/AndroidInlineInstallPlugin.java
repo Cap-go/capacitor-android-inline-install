@@ -4,7 +4,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -61,8 +60,7 @@ public class AndroidInlineInstallPlugin extends Plugin {
 
         if (fallback) {
             // Fallback to full Play Store deep link (no package forced)
-            StringBuilder storeUrl = new StringBuilder("https://play.google.com/store/apps/details?id=")
-                .append(id);
+            StringBuilder storeUrl = new StringBuilder("https://play.google.com/store/apps/details?id=").append(id);
             if (referrer != null && !referrer.isEmpty()) {
                 storeUrl.append("&referrer=").append(Uri.encode(referrer));
             }

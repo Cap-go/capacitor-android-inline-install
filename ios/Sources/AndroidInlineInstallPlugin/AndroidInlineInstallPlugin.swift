@@ -14,7 +14,6 @@ public class AndroidInlineInstallPlugin: CAPPlugin, CAPBridgedPlugin {
     ]
     private let implementation = AndroidInlineInstall()
 
-
     @objc func startInlineInstall(_ call: CAPPluginCall) {
         call.reject("Inline install is only available on Android.")
     }
