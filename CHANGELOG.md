@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.5.0](https://github.com/Cap-go/capacitor-android-inline-install/compare/7.4.10...7.5.0) (2025-10-23)
+
+
+### Features
+
+* add plugin version retrieval methods and update workflows for changelog generation ([bc433c3](https://github.com/Cap-go/capacitor-android-inline-install/commit/bc433c3cf1009721dff1f7d37a9a9b3233d8a949))
+
+
+### Bug Fixes
+
+* remove default content from Discord release notification ([1465087](https://github.com/Cap-go/capacitor-android-inline-install/commit/14650877ee7d7824928dd9b6e1d05109221fa950))
+
 ## [7.4.10](https://github.com/Cap-go/capacitor-android-inline-install/compare/7.4.9...7.4.10) (2025-10-16)
 
 ## [7.4.9](https://github.com/Cap-go/capacitor-android-inline-install/compare/7.4.8...7.4.9) (2025-10-15)
