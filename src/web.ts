@@ -10,4 +10,8 @@ export class AndroidInlineInstallWeb extends WebPlugin implements AndroidInlineI
     console.log('ECHO', options);
     return options;
   }
+
+  async getPluginVersion(): Promise<{ version: string }> {
+    return { version: 'web' };
+  }
 }

@@ -13,6 +13,8 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 @CapacitorPlugin(name = "AndroidInlineInstall")
 public class AndroidInlineInstallPlugin extends Plugin {
 
+    private final String PLUGIN_VERSION = "";
+
     private AndroidInlineInstall implementation = new AndroidInlineInstall();
 
     @PluginMethod
@@ -79,5 +81,16 @@ public class AndroidInlineInstallPlugin extends Plugin {
         }
 
         call.reject("Google Play overlay is unavailable on this device/app (and fallback disabled)");
+    }
+
+    @PluginMethod
+    public void getPluginVersion(final PluginCall call) {
+        try {
+            final JSObject ret = new JSObject();
+            ret.put("version", this.PLUGIN_VERSION);
+            call.resolve(ret);
+        } catch (final Exception e) {
+            call.reject("Could not get plugin version", e);
+        }
     }
 }
