@@ -88,6 +88,10 @@ https://play.google.com/console/about/guides/premium-growth-tools/
 | **`started`**      | <code>boolean</code> | True when the inline install intent has been started.            |
 | **`fallbackUsed`** | <code>boolean</code> | True if a fallback deep link was used instead of inline overlay. |
 
+| Method               | Signature                                    | Description                             |
+| -------------------- | -------------------------------------------- | --------------------------------------- |
+| **getPluginVersion** | () =&gt; Promise&lt;{ version: string; }&gt; | Get the native Capacitor plugin version |
+
 
 #### StartInlineInstallOptions
 
