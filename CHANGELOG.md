@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.5.2](https://github.com/Cap-go/capacitor-android-inline-install/compare/7.5.1...7.5.2) (2025-10-23)
+
+
+### Bug Fixes
+
+* remove footer in discord ([23adbfc](https://github.com/Cap-go/capacitor-android-inline-install/commit/23adbfc6b6b7a7f58432b252cda77f1d48fd567b))
+
 ## [7.5.1](https://github.com/Cap-go/capacitor-android-inline-install/compare/7.5.0...7.5.1) (2025-10-23)
 
 
