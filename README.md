@@ -51,12 +51,15 @@ await AndroidInlineInstall.startInlineInstall({
 <docgen-index>
 
 * [`startInlineInstall(...)`](#startinlineinstall)
+* [`getPluginVersion()`](#getpluginversion)
 * [Interfaces](#interfaces)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+Android Inline Install Plugin for triggering Google Play in-app install flows.
 
 ### startInlineInstall(...)
 
@@ -69,11 +72,28 @@ Start an inline install flow using the Google Play overlay.
 Note: Only eligible apps can use Inline Install. See:
 https://play.google.com/console/about/guides/premium-growth-tools/
 
-| Param         | Type                                                                            |
-| ------------- | ------------------------------------------------------------------------------- |
-| **`options`** | <code><a href="#startinlineinstalloptions">StartInlineInstallOptions</a></code> |
+| Param         | Type                                                                            | Description                            |
+| ------------- | ------------------------------------------------------------------------------- | -------------------------------------- |
+| **`options`** | <code><a href="#startinlineinstalloptions">StartInlineInstallOptions</a></code> | - Configuration for the inline install |
 
 **Returns:** <code>Promise&lt;<a href="#startinlineinstallresult">StartInlineInstallResult</a>&gt;</code>
+
+**Since:** 1.0.0
+
+--------------------
+
+
+### getPluginVersion()
+
+```typescript
+getPluginVersion() => Promise<{ version: string; }>
+```
+
+Get the native Capacitor plugin version.
+
+**Returns:** <code>Promise&lt;{ version: string; }&gt;</code>
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -83,17 +103,17 @@ https://play.google.com/console/about/guides/premium-growth-tools/
 
 #### StartInlineInstallResult
 
+Result of starting an inline install flow.
+
 | Prop               | Type                 | Description                                                      |
 | ------------------ | -------------------- | ---------------------------------------------------------------- |
 | **`started`**      | <code>boolean</code> | True when the inline install intent has been started.            |
 | **`fallbackUsed`** | <code>boolean</code> | True if a fallback deep link was used instead of inline overlay. |
 
-| Method               | Signature                                    | Description                             |
-| -------------------- | -------------------------------------------- | --------------------------------------- |
-| **getPluginVersion** | () =&gt; Promise&lt;{ version: string; }&gt; | Get the native Capacitor plugin version |
-
 
 #### StartInlineInstallOptions
+
+Options for starting an inline install flow.
 
 | Prop           | Type                 | Description                                                                                  |
 | -------------- | -------------------- | -------------------------------------------------------------------------------------------- |
