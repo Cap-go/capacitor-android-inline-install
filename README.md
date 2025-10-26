@@ -11,6 +11,10 @@ Trigger the Google Play Inline Install overlay from a Capacitor app.
 
 Note: Inline Install is only available to certain apps that qualify for Premium Growth Tools. See eligibility and program details here: https://play.google.com/console/about/guides/premium-growth-tools/
 
+## Documentation
+
+The most complete doc is available here: https://capgo.app/docs/plugins/android-inline-install/
+
 ## Install
 
 ```bash
