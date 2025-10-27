@@ -13,7 +13,7 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 @CapacitorPlugin(name = "AndroidInlineInstall")
 public class AndroidInlineInstallPlugin extends Plugin {
 
-    private final String PLUGIN_VERSION = "7.5.5";
+    private final String PLUGIN_VERSION = "7.5.6";
 
     private AndroidInlineInstall implementation = new AndroidInlineInstall();
 
