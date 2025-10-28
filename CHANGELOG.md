@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.5.7](https://github.com/Cap-go/capacitor-android-inline-install/compare/7.5.6...7.5.7) (2025-10-28)
+
+
+### Bug Fixes
+
+* CI/CD config ([3be711e](https://github.com/Cap-go/capacitor-android-inline-install/commit/3be711eb0c61a503ca712bfd6bc5087abe14e41e))
+* update github action ([0e8085d](https://github.com/Cap-go/capacitor-android-inline-install/commit/0e8085d429800db2e4b22eda06d1a27cb354c8c6))
+
 ## [7.5.6](https://github.com/Cap-go/capacitor-android-inline-install/compare/7.5.5...7.5.6) (2025-10-27)
 
 
