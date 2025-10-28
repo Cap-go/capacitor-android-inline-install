@@ -15,8 +15,6 @@ public class AndroidInlineInstallPlugin extends Plugin {
 
     private final String PLUGIN_VERSION = "7.5.6";
 
-    private AndroidInlineInstall implementation = new AndroidInlineInstall();
-
     @PluginMethod
     public void startInlineInstall(PluginCall call) {
         String id = call.getString("id");
