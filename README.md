@@ -11,6 +11,18 @@ Trigger the Google Play Inline Install overlay from a Capacitor app.
 
 Note: Inline Install is only available to certain apps that qualify for Premium Growth Tools. See eligibility and program details here: https://play.google.com/console/about/guides/premium-growth-tools/
 
+## Why Android Inline Install?
+
+The only plugin supporting Google Play's **Inline Install API** - no other Capacitor plugin implements this:
+
+- **In-app installations** - Install apps without leaving your app
+- **Premium Growth Tool** - Access to Google's exclusive promotion features
+- **Seamless UX** - Overlay install experience keeps users engaged
+- **Fallback handling** - Automatically falls back to Play Store if overlay unavailable
+- **Cross-promotion** - Perfect for app families and ecosystem growth
+
+Essential for apps eligible for Google Play Premium Growth Tools and app ecosystem builders.
+
 ## Documentation
 
 The most complete doc is available here: https://capgo.app/docs/plugins/android-inline-install/
