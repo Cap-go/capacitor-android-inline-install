@@ -1,4 +1,4 @@
-package app.capgo.android.inline.insall;
+package app.capgo.android.inline.install;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
