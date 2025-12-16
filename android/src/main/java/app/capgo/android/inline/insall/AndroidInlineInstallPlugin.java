@@ -30,7 +30,7 @@ public class AndroidInlineInstallPlugin extends Plugin {
         String callerId = call.getString("callerId", getContext().getPackageName());
         String cslId = call.getString("csl_id");
         boolean overlay = call.getBoolean("overlay", true);
-        boolean fallback = false;
+        boolean fallback = call.getBoolean("fallback", true);
 
         // Format:
         // https://play.google.com/d?id=<id>&referrer=<referrer>&listing=<csl_id>
