@@ -32,10 +32,8 @@ public class AndroidInlineInstallPlugin extends Plugin {
         boolean overlay = call.getBoolean("overlay", true);
         boolean fallback = false;
 
-        // Build the deep link URL for inline install overlay
         // Format:
         // https://play.google.com/d?id=<id>&referrer=<referrer>&listing=<csl_id>
-        // Note: Trying without referrer first, as it might be causing the PITH error
         StringBuilder deepLink = new StringBuilder("https://play.google.com/d?id=")
                 .append(id);
         // Temporarily commenting out referrer to test if it's causing the issue
