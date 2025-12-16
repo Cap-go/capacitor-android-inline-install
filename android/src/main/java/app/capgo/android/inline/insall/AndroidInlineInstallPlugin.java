@@ -52,7 +52,7 @@ public class AndroidInlineInstallPlugin extends Plugin {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setPackage("com.android.vending");
         intent.setData(Uri.parse(deepLinkUrl));
-        intent.putExtra("overlay", true);
+        intent.putExtra("overlay", overlay);
         intent.putExtra("callerId", callerId);
 
         PackageManager packageManager = getContext().getPackageManager();
