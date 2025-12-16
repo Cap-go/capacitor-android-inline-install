@@ -26,7 +26,7 @@ public class AndroidInlineInstallPlugin extends Plugin {
             return;
         }
 
-        String referrer = "utm_source=heycash&utm_medium=inline";
+        String referrer = call.getString("referrer", "");
         String callerId = call.getString("callerId", getContext().getPackageName());
         String cslId = call.getString("csl_id");
         boolean overlay = call.getBoolean("overlay", true);
@@ -89,7 +89,7 @@ public class AndroidInlineInstallPlugin extends Plugin {
             Log.d(TAG, "Falling back to Play Store URL: " + fallbackUrl);
             Intent fallbackIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(fallbackUrl));
             try {
-                getActivity().startActivityForResult(fallbackIntent, 0  );
+                getActivity().startActivityForResult(fallbackIntent, 0);
                 Log.d(TAG, "Fallback Play Store activity started successfully");
                 JSObject ret = new JSObject();
                 ret.put("started", true);
