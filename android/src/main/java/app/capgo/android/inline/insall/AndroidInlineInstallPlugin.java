@@ -1,9 +1,11 @@
 package app.capgo.android.inline.install;
 
 import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.util.Log;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -13,6 +15,7 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 @CapacitorPlugin(name = "AndroidInlineInstall")
 public class AndroidInlineInstallPlugin extends Plugin {
 
+    private static final String TAG = "AndroidInlineInstallPlugin";
     private final String pluginVersion = "7.5.11";
 
     @PluginMethod
@@ -29,33 +32,48 @@ public class AndroidInlineInstallPlugin extends Plugin {
         boolean overlay = call.getBoolean("overlay", true);
         boolean fallback = call.getBoolean("fallback", true);
 
-        // Build the deep link URL for inline install overlay
+        // Format:
+        // https://play.google.com/d?id=<id>&referrer=<referrer>&listing=<csl_id>
         StringBuilder deepLink = new StringBuilder("https://play.google.com/d?id=")
-            .append(id)
-            .append("&referrer=")
-            .append(Uri.encode(referrer == null ? "" : referrer));
+                .append(id);
+
+        if (referrer != null && !referrer.trim().isEmpty()) {
+            deepLink.append("&referrer=").append(Uri.encode(referrer));
+        }
         if (cslId != null && !cslId.trim().isEmpty()) {
             deepLink.append("&listing=").append(Uri.encode(cslId));
         }
 
+        String deepLinkUrl = deepLink.toString();
+        Log.d(TAG, "Attempting inline install with URI: " + deepLinkUrl);
+        Log.d(TAG, "callerId: " + callerId + ", overlay: " + overlay);
+        Log.d(TAG, "referrer: " + referrer);
+
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setPackage("com.android.vending");
-        intent.setData(Uri.parse(deepLink.toString()));
+        intent.setData(Uri.parse(deepLinkUrl));
         intent.putExtra("overlay", overlay);
         intent.putExtra("callerId", callerId);
 
         PackageManager packageManager = getContext().getPackageManager();
-        if (intent.resolveActivity(packageManager) != null) {
+        ComponentName resolvedActivity = intent.resolveActivity(packageManager);
+        Log.d(TAG, "resolveActivity returned: " + (resolvedActivity != null ? resolvedActivity.toString() : "null"));
+        if (resolvedActivity != null) {
+            Log.d(TAG, "Activity resolved, attempting to start inline install");
             try {
-                getActivity().startActivity(intent);
+                getActivity().startActivityForResult(intent, 0);
+                Log.d(TAG, "Inline install activity started successfully");
                 JSObject ret = new JSObject();
                 ret.put("started", true);
                 ret.put("fallbackUsed", false);
                 call.resolve(ret);
                 return;
             } catch (ActivityNotFoundException ex) {
+                Log.w(TAG, "ActivityNotFoundException when starting inline install", ex);
                 // fall through to fallback handling
             }
+        } else {
+            Log.w(TAG, "No activity resolved for inline install intent, will use fallback");
         }
 
         if (fallback) {
@@ -64,15 +82,19 @@ public class AndroidInlineInstallPlugin extends Plugin {
             if (referrer != null && !referrer.isEmpty()) {
                 storeUrl.append("&referrer=").append(Uri.encode(referrer));
             }
-            Intent fallbackIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(storeUrl.toString()));
+            String fallbackUrl = storeUrl.toString();
+            Log.d(TAG, "Falling back to Play Store URL: " + fallbackUrl);
+            Intent fallbackIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(fallbackUrl));
             try {
-                getActivity().startActivity(fallbackIntent);
+                getActivity().startActivityForResult(fallbackIntent, 0);
+                Log.d(TAG, "Fallback Play Store activity started successfully");
                 JSObject ret = new JSObject();
                 ret.put("started", true);
                 ret.put("fallbackUsed", true);
                 call.resolve(ret);
                 return;
             } catch (ActivityNotFoundException ex) {
+                Log.e(TAG, "ActivityNotFoundException when starting fallback Play Store", ex);
                 call.reject("Unable to start inline install or fallback Play Store deep link");
                 return;
             }

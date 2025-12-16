@@ -9,7 +9,11 @@
 
 Trigger the Google Play Inline Install overlay from a Capacitor app.
 
-Note: Inline Install is only available to certain apps that qualify for Premium Growth Tools. See eligibility and program details here: https://play.google.com/console/about/guides/premium-growth-tools/
+> [!NOTE]
+> Inline Install is [only available to certain apps that qualify for Premium Growth Tools](https://developer.android.com/quality/core-value/app-eligibility). See eligibility and program details here: https://play.google.com/console/about/guides/premium-growth-tools/
+
+> [!CAUTION] 
+> When using an app id that is published on the Play Store, but might not necessarily be eligible for Premium Growth Tools, the fallback will be used. (No overlay will be shown.)
 
 ## Why Android Inline Install?
 
