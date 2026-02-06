@@ -34,8 +34,7 @@ public class AndroidInlineInstallPlugin extends Plugin {
 
         // Format:
         // https://play.google.com/d?id=<id>&referrer=<referrer>&listing=<csl_id>
-        StringBuilder deepLink = new StringBuilder("https://play.google.com/d?id=")
-                .append(id);
+        StringBuilder deepLink = new StringBuilder("https://play.google.com/d?id=").append(id);
 
         if (referrer != null && !referrer.trim().isEmpty()) {
             deepLink.append("&referrer=").append(Uri.encode(referrer));
