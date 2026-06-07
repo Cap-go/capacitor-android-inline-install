@@ -7,23 +7,39 @@ import { AndroidInlineInstall } from '@capgo/capacitor-android-inline-install';
 const plugin = AndroidInlineInstall;
 const state = {};
 
-
 const actions = [
-{
-              id: 'start-inline-install',
-              label: 'Start inline install',
-              description: 'Starts the Google Play inline install flow for the provided package (Android only).',
-              inputs: [{ name: 'id', label: 'Target package id', type: 'text', placeholder: 'com.example.app', value: 'com.android.chrome' }, { name: 'referrer', label: 'Referrer (optional)', type: 'text', placeholder: 'utm_source=example' }, { name: 'overlay', label: 'Request overlay UI', type: 'checkbox', value: true }, { name: 'fallback', label: 'Allow Play Store fallback', type: 'checkbox', value: true }],
-              run: async (values) => {
-                const options = { id: values.id || 'com.android.chrome' };
-if (values.referrer) options.referrer = values.referrer;
-if (values.overlay !== undefined) options.overlay = Boolean(values.overlay);
-if (values.fallback !== undefined) options.fallback = Boolean(values.fallback);
-const result = await plugin.startInlineInstall(options);
-state.lastInlineInstall = result;
-return result;
-              },
-            }
+  {
+    id: 'start-inline-install',
+    label: 'Start inline install',
+    description:
+      'Starts the Google Play inline install flow for the provided package (Android only).',
+    inputs: [
+      {
+        name: 'id',
+        label: 'Target package id',
+        type: 'text',
+        placeholder: 'com.example.app',
+        value: 'com.android.chrome',
+      },
+      {
+        name: 'referrer',
+        label: 'Referrer (optional)',
+        type: 'text',
+        placeholder: 'utm_source=example',
+      },
+      { name: 'overlay', label: 'Request overlay UI', type: 'checkbox', value: true },
+      { name: 'fallback', label: 'Allow Play Store fallback', type: 'checkbox', value: true },
+    ],
+    run: async (values) => {
+      const options = { id: values.id || 'com.android.chrome' };
+      if (values.referrer) options.referrer = values.referrer;
+      if (values.overlay !== undefined) options.overlay = Boolean(values.overlay);
+      if (values.fallback !== undefined) options.fallback = Boolean(values.fallback);
+      const result = await plugin.startInlineInstall(options);
+      state.lastInlineInstall = result;
+      return result;
+    },
+  },
 ];
 
 const actionSelect = document.getElementById('action-select');
