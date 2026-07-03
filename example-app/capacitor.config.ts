@@ -4,7 +4,7 @@ import pkg from './package.json';
 
 const config: CapacitorConfig = {
   appId: 'app.capgo.android.inline.install',
-  appName: 'Android Inline Install Example',
+  appName: '@capgo/capacitor-android-inline-install',
   webDir: 'dist',
   plugins: {
     SplashScreen: {
