@@ -23,6 +23,10 @@ jobs:
             echo "Expected capacitor-swift-pm to be pinned to 8.0.0 in Package.swift"
             exit 1
           fi
+          if grep -q 'product(name: "Cordova"' Package.swift; then
+            echo "Remove unconditional Cordova product dependency from Package.swift (Capacitor 9 optional Cordova layer)"
+            exit 1
+          fi
   build_android:
     runs-on: ubuntu-latest
     # Keep this job capped at 10 minutes; never raise it unless explicitly asked.
