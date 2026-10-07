@@ -19,8 +19,8 @@ Open the Google Play inline install overlay from your Capacitor app so users can
 
 - **Inline install**: `startInlineInstall()` opens the Google Play install overlay for a package.
 - **Stay in app**: users install without leaving your app.
-- **Fallback handling**: if the Play overlay activity is not found, the plugin falls back instead of crashing.
-- **Tiny API**: one method, no extra SDK dependency.
+- **Fallback**: with `fallback` on (the default), the plugin opens the full Play Store page when the overlay is unavailable. The call rejects if neither can start.
+- **Tiny API**: one install method, no extra SDK dependency.
 - **Platforms**: Android. Android only, and only for apps that Google enabled for inline install.
 
 Trigger the Google Play Inline Install overlay from a Capacitor app.
