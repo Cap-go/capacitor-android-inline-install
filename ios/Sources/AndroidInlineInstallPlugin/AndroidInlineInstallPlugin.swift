@@ -7,7 +7,7 @@ import Capacitor
  */
 @objc(AndroidInlineInstallPlugin)
 public class AndroidInlineInstallPlugin: CAPPlugin, CAPBridgedPlugin {
-    private let pluginVersion: String = "8.0.15"
+    private let pluginVersion: String = "8.0.16"
     public let identifier = "AndroidInlineInstallPlugin"
     public let jsName = "AndroidInlineInstall"
     public let pluginMethods: [CAPPluginMethod] = [
