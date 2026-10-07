@@ -1,11 +1,27 @@
 # @capgo/capacitor-android-inline-install
 
-<a href="https://capgo.app/"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-android-inline-install" alt="Capgo - Instant updates for Capacitor" /></a>
+Open the Google Play inline install overlay from your Capacitor app so users can install another app without leaving yours. Useful for cross-promotion in apps that qualify for Premium Growth Tools.
+
+<a href="https://capgo.app/?ref=plugin_android_inline_install"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-android-inline-install" alt="Capgo - Instant updates for Capacitor" /></a>
 
 <div align="center">
-  <h2><a href="https://capgo.app/?ref=plugin_android_inline_install"> ➡️ Get Instant updates for your App with Capgo 🚀</a></h2>
-  <h2><a href="https://capgo.app/consulting/?ref=plugin_android_inline_install"> Fix your annoying bug now, Hire a Capacitor expert 💪</a></h2>
+  <p><b>Capgo</b>: open-source live updates for Ionic and Capacitor apps. Ship OTA fixes and features instantly, without waiting for app store review.</p>
+  <h2><a href="https://capgo.app/register/?ref=plugin_android_inline_install">➡️ Get started for free</a></h2>
+  <p>14-day unlimited free trial. No credit card required</p>
+  <p><a href="https://capgo.app/consulting/?ref=plugin_android_inline_install">Missing a feature? We'll build the plugin for you 💪</a></p>
 </div>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Cap-go/capacitor-android-inline-install/main/assets/github-social-preview.png" alt="@capgo/capacitor-android-inline-install for Capacitor apps" width="300" />
+</p>
+
+## Key features
+
+- **Inline install**: `startInlineInstall()` opens the Google Play install overlay for a package.
+- **Stay in app**: users install without leaving your app.
+- **Fallback handling**: if the Play overlay activity is not found, the plugin falls back instead of crashing.
+- **Tiny API**: one method, no extra SDK dependency.
+- **Platforms**: Android. Android only, and only for apps that Google enabled for inline install.
 
 Trigger the Google Play Inline Install overlay from a Capacitor app.
 
