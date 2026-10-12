@@ -2,7 +2,7 @@
 
 Open the Google Play inline install overlay from your Capacitor app so users can install another app without leaving yours. Useful for cross-promotion in apps that qualify for Premium Growth Tools.
 
-<a href="https://capgo.app/?ref=plugin_android_inline_install"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-android-inline-install" alt="Capgo - Instant updates for Capacitor" /></a>
+<a href="https://capgo.app/?ref=plugin_android_inline_install"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-android-inline-install" alt="Capgo - Build Capacitor apps with AI, ship updates instantly" /></a>
 
 <div align="center">
   <p><b>Capgo</b>: push fixes to your Capacitor users in minutes, build signed iOS and Android apps without a Mac, and roll back in one click.</p>
@@ -10,6 +10,8 @@ Open the Google Play inline install overlay from your Capacitor app so users can
   <p>14-day unlimited free trial. No credit card required</p>
   <p><a href="https://capgo.app/consulting/?ref=plugin_android_inline_install">Missing a feature? We'll build the plugin for you 💪</a></p>
 </div>
+
+> 🤖 **Building with an AI coding agent?** Install [Capgo skills](https://capgo.app/skills/?ref=plugin_android_inline_install) so Claude Code, Codex, Cursor, Copilot, or Gemini CLI know how to install and use `@capgo/capacitor-android-inline-install` in your Capacitor app: `npx skills add Cap-go/capgo-skills`. Then ask your agent: *"Add @capgo/capacitor-android-inline-install to my Capacitor app and wire it up."* [Agent setup guides](https://capgo.app/agents/?ref=plugin_android_inline_install) · [Hosted MCP](https://capgo.app/docs/ai/mcp/?ref=plugin_android_inline_install)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Cap-go/capacitor-android-inline-install/main/assets/github-social-preview.png" alt="@capgo/capacitor-android-inline-install for Capacitor apps" width="300" />
